@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import './App.css'
-import { selectorIsInitialize } from '../common/selectors/selectorsAll'
+import { selectorErrorMessage, selectorIsInitialize } from '../common/selectors/selectorsAll'
 import { useAppDispatch } from '../utils/hooks/useAppDispatch'
 import { useAppSelector } from '../utils/hooks/useAppSelector'
 
@@ -10,12 +10,13 @@ import { InitializeAppTC } from './appReducer'
 function App() {
   const dispatch = useAppDispatch()
   const initializeApp = useAppSelector(selectorIsInitialize)
+  const errorInitMessage = useAppSelector(selectorErrorMessage)
 
   useEffect(() => {
-    dispatch(InitializeAppTC)
+    dispatch(InitializeAppTC())
   }, [])
 
-  if (!initializeApp) return <>Something Wrong</>
+  if (initializeApp && errorInitMessage) return <>{errorInitMessage}</>
 
   return (
     <div className="App">

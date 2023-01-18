@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+import { Api } from '../api/Api'
+
 export type LoadType = 'idle' | 'succeed' | 'failed' | 'loading'
 
 type Error = null | string
@@ -10,13 +12,13 @@ export type LoadStateType = {
   isInitialize: boolean
 }
 
-export const InitializeAppTC = createAsyncThunk(
+export const InitializeAppTC = createAsyncThunk<{}, string, { rejectValue: { error: Error } }>(
   'APP/INITIALIZE-APP',
-  async (arg, { dispatch, rejectWithValue }) => {
+  async (arg, { rejectWithValue }) => {
     try {
-      // const res = await
+      return await Api.getAppStatus()
     } catch (reason) {
-      return rejectWithValue(reason)
+      return rejectWithValue(reason as { error: Error })
     }
   }
 )
@@ -41,6 +43,14 @@ const slice = createSlice({
   extraReducers: builder => {
     builder.addCase(InitializeAppTC.fulfilled, state => {
       state.isInitialize = true
+    })
+    builder.addCase(InitializeAppTC.rejected, (state, action) => {
+      state.isInitialize = true
+      if (action.payload) {
+        state.ErrorMessage = action.payload.error
+      } else {
+        state.ErrorMessage = 'Something Wrong'
+      }
     })
   },
 })
