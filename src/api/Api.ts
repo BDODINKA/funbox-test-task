@@ -5,7 +5,7 @@ const isAppWorking = () => {
     if (isWorking) {
       resolve({ isWorking })
     } else {
-      reject({ error: 'Error' })
+      reject({ error: 'Sorry App is not working' })
     }
   })
 }

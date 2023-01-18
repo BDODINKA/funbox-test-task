@@ -12,7 +12,7 @@ export type LoadStateType = {
   isInitialize: boolean
 }
 
-export const InitializeAppTC = createAsyncThunk<{}, string, { rejectValue: { error: Error } }>(
+export const InitializeAppTC = createAsyncThunk<{}, undefined, { rejectValue: { error: Error } }>(
   'APP/INITIALIZE-APP',
   async (arg, { rejectWithValue }) => {
     try {
