@@ -1,11 +1,15 @@
 const isAppWorking = () => {
-  const isWorking = false
+  const isWorking = true
 
   return new Promise((resolve, reject) => {
     if (isWorking) {
-      resolve({ isWorking })
+      setTimeout(() => {
+        resolve({ isWorking })
+      }, 3000)
     } else {
-      reject({ error: 'Sorry App is not working' })
+      setTimeout(() => {
+        reject({ error: 'Sorry App is not working' })
+      }, 3000)
     }
   })
 }
@@ -14,4 +18,6 @@ export const Api = {
   getAppStatus() {
     return isAppWorking()
   },
+  getGoods() {},
+  addGoods() {},
 }
