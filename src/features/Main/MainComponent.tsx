@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 
+import { Card } from '../../common/card/Card'
 import { selectorAnimalData } from '../../common/selectors/selectorsAll'
 import { Wrapper } from '../../common/wrapper/Wrapper'
 import { useAppDispatch } from '../../utils/hooks/useAppDispatch'
@@ -24,14 +25,9 @@ export const MainComponent = () => {
   if (!data) return <div>Render</div>
 
   return (
-    <main title="main">
+    <main>
       <Wrapper>
-        {data.cats &&
-          data.cats['Royal Canin'].map(i => (
-            <div key={i.gift}>
-              <div>{i.brand}</div>
-            </div>
-          ))}
+        {data.cats && data.cats['Royal Canin'].map(item => <Card card={item} key={item.id} />)}
       </Wrapper>
     </main>
   )
