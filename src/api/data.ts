@@ -1,6 +1,8 @@
-export type AnimalType = {
-  [key: string]: Array<BrandType>
+export type AnimalType<T = BrandType> = {
+  cats: T
+  dogs: T
 }
+
 export type BrandType = {
   [key: string]: Array<PackType>
 }
@@ -120,18 +122,14 @@ const GoodsBosh = [
 ]
 
 export const serverData: AnimalType = {
-  cats: [
-    {
-      ['Нямушка']: GoodsNyamushka,
-      ['Royal Canin']: GoodsRoyalCanin,
-      ['Frieskies']: GoodsFrieskies,
-    },
-  ],
-  dogs: [
-    {
-      ['Нямушка']: GoodsNyamushka,
-      ['Royal Canin']: GoodsRoyalCanin,
-      ['Bosh']: GoodsBosh,
-    },
-  ],
+  cats: {
+    ['Нямушка']: GoodsNyamushka,
+    ['Royal Canin']: GoodsRoyalCanin,
+    ['Frieskies']: GoodsFrieskies,
+  },
+  dogs: {
+    ['Нямушка']: GoodsNyamushka,
+    ['Royal Canin']: GoodsRoyalCanin,
+    ['Bosh']: GoodsBosh,
+  },
 }
