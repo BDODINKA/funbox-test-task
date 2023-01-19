@@ -6,4 +6,6 @@ const selectorErrorMessage = (state: AppRootStateType) => state.app.ErrorMessage
 
 const selectorIsLoading = (state: AppRootStateType) => state.app.loading
 
-export { selectorIsInitialize, selectorErrorMessage, selectorIsLoading }
+const selectorAnimalData = (state: AppRootStateType) => state.main.animalData
+
+export { selectorIsInitialize, selectorErrorMessage, selectorIsLoading, selectorAnimalData }
