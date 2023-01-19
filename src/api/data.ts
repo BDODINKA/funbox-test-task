@@ -1,3 +1,5 @@
+import { v1 } from 'uuid'
+
 export type AnimalType<T = BrandType> = {
   cats: T
   dogs: T
@@ -8,9 +10,11 @@ export type BrandType = {
 }
 
 export type PackType = {
+  id: string
   weight: number
   filler: string
   brand: string
+  title: string
   description: string
   portion: number
   gift: number
@@ -18,104 +22,128 @@ export type PackType = {
 
 const GoodsNyamushka = [
   {
+    id: v1(),
     weight: 0.5,
     filler: 'с фуа-гра',
     brand: 'Нямушка',
-    description: 'Сказочное заморское яство',
+    title: 'Сказочное заморское яство',
+    description: 'Печень утки разварная с артишоками.',
     portion: 10,
     gift: 1,
   },
   {
+    id: v1(),
     weight: 2,
     filler: 'с рыбой',
     brand: 'Нямушка',
-    description: 'Сказочное заморское яство',
+    title: 'Сказочное заморское яство',
+    description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
     portion: 40,
     gift: 2,
   },
   {
+    id: v1(),
     weight: 5,
     filler: 'с курой',
     brand: 'Нямушка',
-    description: 'Сказочное заморское яство',
+    title: 'Сказочное заморское яство',
+    description: 'Филе из цыплят с трюфелями в бульоне.',
     portion: 100,
     gift: 5,
   },
 ]
 const GoodsRoyalCanin = [
   {
+    id: v1(),
     weight: 0.5,
     filler: 'c уткой',
-    brand: 'RoyalCanin',
-    description: 'Отличное заморское яство',
+    brand: 'Royal Canin',
+    title: 'Отличное заморское яство',
+    description: 'Вкуснейшая утка для вашего питомца',
     portion: 10,
     gift: 1,
   },
   {
+    id: v1(),
     weight: 2,
     filler: 'с индекой',
-    brand: 'RoyalCanin',
-    description: 'Отличное заморское яство',
+    brand: 'Royal Canin',
+    title: 'Отличное заморское яство',
+    description: 'Диетическая индейка для вашего питомца',
     portion: 40,
     gift: 2,
   },
   {
+    id: v1(),
     weight: 5,
     filler: 'с курой',
-    brand: 'RoyalCanin',
-    description: 'Отличное заморское яство',
+    brand: 'Royal Canin',
+    title: 'Отличное заморское яство',
+    description: 'Сытная кура для вашего питомца',
     portion: 100,
     gift: 5,
   },
 ]
 const GoodsFrieskies = [
   {
+    id: v1(),
     weight: 0.5,
     filler: 'c уткой',
     brand: 'Frieskies',
-    description: 'Хорошее заморское яство',
+    title: 'Хорошее заморское яство',
+    description: 'Вкуснейшая утка для вашего питомца',
     portion: 10,
     gift: 1,
   },
   {
+    id: v1(),
     weight: 2,
     filler: 'с рыбкой',
     brand: 'Frieskies',
-    description: 'Хорошее заморское яство',
+    title: 'Хорошее заморское яство',
+    description: 'Нежнейшая рыбка для вашего питомца',
     portion: 40,
     gift: 2,
   },
   {
+    id: v1(),
     weight: 5,
     filler: 'с паштетом',
     brand: 'Frieskies',
-    description: 'Хорошее заморское яство',
+    title: 'Хорошее заморское яство',
+    description: 'Паштет как в Домах Лондона для вашего питомца',
     portion: 100,
     gift: 5,
   },
 ]
 const GoodsBosh = [
   {
+    id: v1(),
     weight: 0.5,
     filler: 'c уткой',
     brand: 'Bosh',
-    description: 'Хорошее заморское яство',
+    title: 'Хорошее заморское яство',
+    description: 'Немецкое качество',
     portion: 10,
     gift: 1,
   },
   {
+    id: v1(),
     weight: 2,
     filler: 'с рыбкой',
     brand: 'Bosh',
-    description: 'Хорошее заморское яство',
+    title: 'Хорошее заморское яство',
+    description: 'Немецкое качество',
     portion: 40,
     gift: 2,
   },
   {
+    id: v1(),
     weight: 5,
     filler: 'с паштетом',
     brand: 'Bosh',
-    description: 'Хорошее заморское яство',
+    title: 'Хорошее заморское яство',
+    description: 'Немецкое качество',
     portion: 100,
     gift: 5,
   },
