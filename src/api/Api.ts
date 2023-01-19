@@ -1,3 +1,5 @@
+import { AnimalType, serverData } from './data'
+
 const isAppWorking = () => {
   const isWorking = true
 
@@ -14,10 +16,26 @@ const isAppWorking = () => {
   })
 }
 
+const ResponseData = (serverData: AnimalType) => {
+  return new Promise((resolve, reject) => {
+    if (serverData) {
+      setTimeout(() => {
+        resolve({ statusCode: 200, data: serverData })
+      }, 3000)
+    } else {
+      setTimeout(() => {
+        reject({ statusCode: 500, data: {}, error: 'Sorry but data is broken' })
+      }, 3000)
+    }
+  })
+}
+
 export const Api = {
   getAppStatus() {
     return isAppWorking()
   },
-  getGoods() {},
+  getGoods() {
+    return ResponseData(serverData)
+  },
   addGoods() {},
 }
