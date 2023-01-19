@@ -7,7 +7,7 @@ type PropsType = {
 export const Wrapper = (props: PropsType) => {
   return (
     <>
-      <section>{props.children}</section>
+      <div>{props.children}</div>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 
 import './App.css'
+import { Loader } from '../common/loader/Loader'
 import { selectorErrorMessage, selectorIsInitialize } from '../common/selectors/selectorsAll'
 import { Crash } from '../features/Crash/Crash'
 import { Header } from '../features/Header/Header'
@@ -19,7 +20,7 @@ function App() {
     dispatch(InitializeAppTC())
   }, [])
 
-  if (!initializeApp) return <>Render</>
+  if (!initializeApp) return <Loader />
 
   return (
     <>
