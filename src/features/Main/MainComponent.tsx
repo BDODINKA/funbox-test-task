@@ -18,13 +18,18 @@ export const MainComponent = () => {
     dispatch(SetDataAppTC())
   }, [])
 
-  if (!data.cats) return <Loader />
-
   return (
     <main className={style.main}>
-      <section>
+      {!data.cats && <Loader />}
+      <section className={style.section}>
         <Wrapper>
-          {data.cats && data.cats['Royal Canin'].map(item => <Card card={item} key={item.id} />)}
+          {data.cats && (
+            <div className={style.content}>
+              {data.cats['Royal Canin'].map(item => (
+                <Card card={item} key={item.id} />
+              ))}
+            </div>
+          )}
         </Wrapper>
       </section>
     </main>

@@ -65,6 +65,16 @@ const GoodsRoyalCanin = [
   },
   {
     id: v1(),
+    weight: 0.5,
+    filler: 'c уткой',
+    brand: 'Royal Canin',
+    title: 'Отличное заморское яство',
+    description: 'Вкуснейшая утка для вашего питомца',
+    portion: 10,
+    gift: 1,
+  },
+  {
+    id: v1(),
     weight: 2,
     filler: 'с индекой',
     brand: 'Royal Canin',
@@ -84,6 +94,7 @@ const GoodsRoyalCanin = [
     gift: 5,
   },
 ]
+
 const GoodsFrieskies = [
   {
     id: v1(),

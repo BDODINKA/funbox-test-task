@@ -1,68 +1,102 @@
 @import './src/_variables';
 @import './src/_mixins';
-.wrapper{
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  width: 320px;
-  border-radius: 10px;
-  background: linear-gradient(135deg,transparent 32px,$border-primary 0);
-  height: 490px;
-  .card{
-    cursor: pointer;
-    width: 312px;
-    height: 480px;
-    position: relative;
-    display: block;
-    z-index: 1;
-    background: url($card-url) bottom left no-repeat,linear-gradient(135deg,transparent 30px,$bg-primary 0);
-    text-align: left;
-    font-weight: 400;
+
+.item {
+  position: relative;
+  max-height: 490px;
+  margin-bottom: 40px;
+  .wrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 320px;
     border-radius: 10px;
-    color: #666;
-    .content{
-      padding-left: 40px;
-      .title{
-        font-size: 16px;
-        line-height: 19px;
-        padding-top: 21px;
-      }
-      .brand{
-        color: $text-color-primary;
-        @include fonts-light(48px,700,56px);
-        padding-top: 5px;
-      }
-      .filler{
-        color: $text-color-primary;
-        @include fonts-light(24px,700,28px);
-      }
-      .portion,
-      .gift{
-        @include fonts-light(14px,700,16px);
-        padding-top: 15px;
-      }
-      .gift{
-        padding-top: 0;
-      }
-      .circle{
-        width: 85px;
-        height: 85px;
-        color: $text-color-third;
-        text-align: center;
-        background-color: $border-primary;
-        border-radius: 50%;
-        position: absolute;
-        bottom: 3%;
-        right: 3%;
-        .weight{
-          padding-top: 14px;
-          font-size: 40px;
-          line-height: 37px;
+    background: linear-gradient(135deg, transparent 32px, $border-primary 0);
+    height: 490px;
+
+    .card {
+      cursor: pointer;
+      width: 312px;
+      height: 480px;
+      position: relative;
+      display: block;
+      z-index: 1;
+      background: url($card-url) bottom left no-repeat, linear-gradient(135deg, transparent 30px, $bg-primary 0);
+      text-align: left;
+      border-radius: 10px;
+      color: $text-color-secondary;
+
+      .content {
+        padding-left: 40px;
+
+        .title {
+          font-size: 16px;
+          line-height: 19px;
+          padding-top: 21px;
         }
-        .units{
-          font-size: 21px;
+
+        .brand {
+          color: $text-color-primary;
+          @include fonts-light(48px, 700, 56px);
+          padding-top: 5px;
+        }
+
+        .filler {
+          color: $text-color-primary;
+          @include fonts-light(24px, 700, 28px);
+        }
+
+        .portion,
+        .gift {
+          @include fonts-light(14px, 700, 16px);
+          padding-top: 15px;
+        }
+
+        .gift {
+          padding-top: 0;
+        }
+
+        .circle {
+          width: 85px;
+          height: 85px;
+          color: $text-color-third;
+          text-align: center;
+          background-color: $border-primary;
+          border-radius: 50%;
+          position: absolute;
+          bottom: 3%;
+          right: 3%;
+
+          .weight {
+            padding-top: 14px;
+            font-size: 40px;
+            line-height: 37px;
+          }
+
+          .units {
+            font-size: 21px;
+          }
         }
       }
+    }
+  }
+
+  .description {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    text-shadow: 0 1px 0 #000;
+    display: block;
+    .link{
+      cursor: pointer;
+      font-weight: 700;
+      text-decoration: none;
+      color: $link-color-primary;
+      border-bottom: 1px dashed $link-color-primary;
+      margin-left: 3px;
     }
   }
 }

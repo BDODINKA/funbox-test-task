@@ -11,7 +11,7 @@ export const Card = (props: PropsType) => {
   const { title, brand, filler, portion, description, gift, weight } = props.card
 
   return (
-    <>
+    <div className={style.item}>
       <div className={style.wrapper}>
         <div className={style.card}>
           <div className={style.content}>
@@ -27,7 +27,12 @@ export const Card = (props: PropsType) => {
           </div>
         </div>
       </div>
-      <p className={'description'}>{description}</p>
-    </>
+      <p className={style.description}>
+        {description},
+        <a href="#" className={style.link}>
+          купи
+        </a>
+      </p>
+    </div>
   )
 }

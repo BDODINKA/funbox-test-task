@@ -3,10 +3,10 @@
 
 .header {
   width: 100%;
-  position: fixed;
+  position: absolute;
   background: transparent;
   top: 36px;
-  animation: title 5s ease-in-out;
+  animation: title 2.5s ease-out;
   .title {
     text-align: center;
     @include fonts-strong(36px,normal,100, 44px, $font);
@@ -17,7 +17,7 @@
 
 @keyframes title {
   from {
-    top: -1000px;
+    top: -250px;
   }
   to {
     top: 36px;

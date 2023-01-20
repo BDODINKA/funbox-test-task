@@ -1,6 +1,33 @@
 @import 'src/_variables';
 
-.main{
+.main {
   background: url($bg-url-primary);
-  height: 100vh;
+  min-height: 100vh;
+
+  .section {
+    padding-top: 104px;
+    min-height: calc(100vh - 104px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+      display: flex;
+      gap: 80px;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: content 4s ease-in-out;
+    }
+  }
+
+}
+@keyframes content {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
