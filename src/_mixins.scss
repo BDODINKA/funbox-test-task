@@ -6,8 +6,9 @@
   line-height: $l-height;
   font-family: $f-family;
 }
-@mixin fonts-light($size:inherit,$l-height:inherit,$f-family:inherit) {
+@mixin fonts-light($size:inherit,$weight:400,$height:inherit,$family:inherit) {
   font-size: $size;
-  line-height: $l-height;
-  font-family: $f-family;
+  font-weight: $weight;
+  line-height: $height;
+  font-family: $family;
 }

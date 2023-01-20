@@ -2,6 +2,8 @@ import React from 'react'
 
 import { PackType } from '../../api/data'
 
+import style from './Card.module.scss'
+
 type PropsType = {
   card: PackType
 }
@@ -10,17 +12,17 @@ export const Card = (props: PropsType) => {
 
   return (
     <>
-      <div className={'wrapper'}>
-        <div className={'card'}>
-          <div className={'content'}>
-            <p className={'title'}>{title}</p>
-            <h3 className={'brand'}>{brand}</h3>
-            <h5 className={'filler'}>{filler}</h5>
-            <p className={'portion'}>{portion}</p>
-            <p className={'gift'}>{gift}</p>
-            <div className={'circle'}>
-              <p className={'weight'}>{weight}</p>
-              <p className={'units'}>кг</p>
+      <div className={style.wrapper}>
+        <div className={style.card}>
+          <div className={style.content}>
+            <p className={style.title}>{title}</p>
+            <h3 className={style.brand}>{brand}</h3>
+            <h5 className={style.filler}>{filler}</h5>
+            <p className={style.portion}>{portion}</p>
+            <p className={style.gift}>{`${gift} мышь в подарок`}</p>
+            <div className={style.circle}>
+              <p className={style.weight}>{weight}</p>
+              <p className={style.units}>кг</p>
             </div>
           </div>
         </div>

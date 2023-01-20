@@ -21,11 +21,11 @@ const ResponseData = (serverData: AnimalType) => {
     if (serverData) {
       setTimeout(() => {
         resolve({ statusCode: 200, data: serverData })
-      }, 3000)
+      }, 13000)
     } else {
       setTimeout(() => {
         reject({ statusCode: 500, data: {}, error: 'Sorry but data is broken' })
-      }, 3000)
+      }, 13000)
     }
   })
 }
