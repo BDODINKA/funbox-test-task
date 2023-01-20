@@ -1,0 +1,7 @@
+@mixin fonts($size:inherit,$f-style:normal,$f-weight:inherit,$l-height:inherit,$f-family:inherit) {
+  font-size: $size;
+  font-style: $f-style;
+  font-weight: $f-weight;
+  line-height: $l-height;
+  font-family: $f-family;
+}

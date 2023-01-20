@@ -1,5 +1,11 @@
 import React from 'react'
 
+import style from './Loader.module.scss'
+
 export const Loader = () => {
-  return <div>RENDER</div>
+  return (
+    <div className={style.spinWrapper}>
+      <div className={style.spinner}></div>
+    </div>
+  )
 }
