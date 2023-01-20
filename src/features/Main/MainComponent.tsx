@@ -7,6 +7,7 @@ import { Wrapper } from '../../common/wrapper/Wrapper'
 import { useAppDispatch } from '../../utils/hooks/useAppDispatch'
 import { useAppSelector } from '../../utils/hooks/useAppSelector'
 
+import style from './MainComponent.module.scss'
 import { SetDataAppTC } from './mainReducer'
 
 export const MainComponent = () => {
@@ -20,7 +21,7 @@ export const MainComponent = () => {
   if (!data.cats) return <Loader />
 
   return (
-    <main>
+    <main className={style.main}>
       <section>
         <Wrapper>
           {data.cats && data.cats['Royal Canin'].map(item => <Card card={item} key={item.id} />)}

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import style from './wrapper.module.scss'
+
 type PropsType = {
   children?: React.ReactNode
 }
@@ -7,7 +9,7 @@ type PropsType = {
 export const Wrapper = (props: PropsType) => {
   return (
     <>
-      <div>{props.children}</div>
+      <div className={style.wrapper}>{props.children}</div>
     </>
   )
 }

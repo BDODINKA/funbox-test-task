@@ -1,11 +1,5 @@
 @import 'src/_variables';
 
-.spinWrapper{
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url($bg-url-secondary) no-repeat;
-  background-size: cover;
   .spinner{
     position: absolute;
     height: 60px;
@@ -43,7 +37,7 @@
       animation: spin 4s linear infinite;
     }
   }
-}
+
 
 @keyframes spin{
   0% {transform: rotate(0deg);}
