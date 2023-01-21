@@ -17,6 +17,8 @@ export const Card = (props: PropsType) => {
   const [selected, setSelected] = useState<boolean>(false)
   const [showTitle, setShowTitle] = useState<boolean>(false)
 
+  let styles: Record<string, string>
+
   const finalTitle = showTitle && selected ? 'Котэ не одобряет?' : title
   const finalGift = giftCount(gift)
 
@@ -38,8 +40,6 @@ export const Card = (props: PropsType) => {
     selected && event && setShowTitle(false)
   }
 
-  let styles: Record<string, string>
-
   if (selected) {
     styles = generateClassNames(style, selected, 'selected')
   } else {
@@ -50,13 +50,13 @@ export const Card = (props: PropsType) => {
   }
 
   return (
-    <div
-      className={styles.item}
-      onClick={onSelectedHandler}
-      onMouseEnter={onMouseFocusHandler}
-      onMouseLeave={onMouseLeaveHandler}
-    >
-      <div className={styles.wrapper}>
+    <div className={styles.item}>
+      <div
+        className={styles.wrapper}
+        onClick={onSelectedHandler}
+        onMouseEnter={onMouseFocusHandler}
+        onMouseLeave={onMouseLeaveHandler}
+      >
         <div className={styles.card}>
           <div className={styles.content}>
             <p className={styles.title}>{finalTitle}</p>
@@ -77,6 +77,7 @@ export const Card = (props: PropsType) => {
         count={count}
         description={description}
         filler={filler}
+        onClick={onSelectedHandler}
       />
     </div>
   )

@@ -6,10 +6,11 @@ type PropsType = {
   count: number
   filler: string
   description: string
+  onClick: () => void
 }
 
 export const NoticeCard = (props: PropsType) => {
-  const { styles, selected, count, description, filler } = props
+  const { styles, selected, count, description, filler, onClick } = props
 
   if (count < 1)
     return (
@@ -22,7 +23,7 @@ export const NoticeCard = (props: PropsType) => {
     return (
       <p className={styles.description}>
         {'Чего сидишь? Порадуй котэ'}
-        <a href="src/features/Main/card/Card#" className={styles.link}>
+        <a className={styles.link} onClick={onClick}>
           купи
         </a>
         {','}
