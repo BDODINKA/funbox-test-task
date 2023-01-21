@@ -5,6 +5,9 @@
   position: relative;
   max-height: 490px;
   margin-bottom: 40px;
+  &.item_disabled{
+    pointer-events: none;
+  }
 
   .wrapper {
     justify-content: center;
@@ -19,6 +22,10 @@
       background: linear-gradient(135deg, transparent 32px, $border-secondary 0);
     }
 
+    &.wrapper_disabled {
+      background: linear-gradient(135deg, transparent 32px, $border-disabled 0);
+    }
+
     .card {
       cursor: pointer;
       width: 312px;
@@ -30,10 +37,12 @@
       text-align: left;
       border-radius: 10px;
       color: $text-color-secondary;
-
+      &.card_disabled {
+        color: $text-color-disabled;
+        opacity: 0.5;
+      }
       .content {
         padding-left: 40px;
-
         .title {
           font-size: 16px;
           line-height: 19px;
@@ -44,11 +53,17 @@
           color: $text-color-primary;
           @include fonts-light(48px, 700, 56px);
           padding-top: 5px;
+          &.brand_disabled {
+            color: $text-color-disabled;
+          }
         }
 
         .filler {
           color: $text-color-primary;
           @include fonts-light(24px, 700, 28px);
+          &.filler_disabled {
+            color: $text-color-disabled;
+          }
         }
 
         .portion,
@@ -71,8 +86,12 @@
           position: absolute;
           bottom: 3%;
           right: 3%;
+
           &.circle_selected {
             background: $border-secondary;
+          }
+          &.circle_disabled {
+            background: $border-disabled;
           }
 
 
@@ -100,7 +119,8 @@
     text-align: center;
     text-shadow: 0 1px 0 #000;
     display: block;
-    &.description_disabled{
+
+    &.description_disabled {
       color: $text-color-five;
     }
 
@@ -117,12 +137,15 @@
   &:hover {
     .wrapper {
       background: linear-gradient(135deg, transparent 32px, $border-primary-hover 0);
+
       &.wrapper_selected {
         background: linear-gradient(135deg, transparent 32px, $border-secondary-hover 0);
+
         .card {
           .circle {
             background: $border-primary-hover;
-            &.circle_selected{
+
+            &.circle_selected {
               background: $border-secondary-hover;
             }
           }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { PackType } from '../../../api/data'
 import { generateClassNames } from '../../../utils/function/generateCSS'
+import { giftCount } from '../../../utils/function/giftCount'
 
 import style from './Card.module.scss'
 import { NoticeCard } from './NoticeCard'
@@ -17,6 +18,7 @@ export const Card = (props: PropsType) => {
   const [showTitle, setShowTitle] = useState<boolean>(false)
 
   const finalTitle = showTitle && selected ? 'Котэ не одобряет?' : title
+  const finalGift = giftCount(gift)
 
   const onSelectedHandler = () => {
     if (count > 0) {
@@ -43,6 +45,9 @@ export const Card = (props: PropsType) => {
   } else {
     styles = generateClassNames(style, selected)
   }
+  if (count < 1) {
+    styles = generateClassNames(style, true, 'disabled')
+  }
 
   return (
     <div
@@ -58,7 +63,7 @@ export const Card = (props: PropsType) => {
             <h3 className={styles.brand}>{brand}</h3>
             <h5 className={styles.filler}>{filler}</h5>
             <p className={styles.portion}>{portion}</p>
-            <p className={styles.gift}>{`${gift} мышь в подарок`}</p>
+            <p className={styles.gift}>{`${gift} ${finalGift} в подарок`}</p>
             <div className={styles.circle}>
               <p className={styles.weight}>{weight}</p>
               <p className={styles.units}>кг</p>

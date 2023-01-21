@@ -25,7 +25,7 @@ export const MainComponent = () => {
         <Wrapper>
           {data.cats && (
             <div className={style.content}>
-              {data.cats['Royal Canin'].map(item => (
+              {data.cats['Нямушка'].map(item => (
                 <Card card={item} key={item.id} />
               ))}
             </div>
