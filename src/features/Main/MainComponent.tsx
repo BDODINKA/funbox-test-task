@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 
-import { Card } from '../../common/card/Card'
 import { Loader } from '../../common/loader/Loader'
 import { selectorAnimalData } from '../../common/selectors/selectorsAll'
 import { Wrapper } from '../../common/wrapper/Wrapper'
 import { useAppDispatch } from '../../utils/hooks/useAppDispatch'
 import { useAppSelector } from '../../utils/hooks/useAppSelector'
 
+import { Card } from './card/Card'
 import style from './MainComponent.module.scss'
 import { SetDataAppTC } from './mainReducer'
 
