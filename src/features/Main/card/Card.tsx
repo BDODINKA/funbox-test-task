@@ -13,12 +13,26 @@ export const Card = (props: PropsType) => {
   const { title, brand, filler, portion, description, gift, weight } = props.card
 
   const [selected, setSelected] = useState<boolean>(false)
+  const [showTitle, setShowTitle] = useState<boolean>(false)
 
   const onSelectedHandler = () => {
     setSelected(!selected)
   }
+  const onMouseFocusHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (selected && event) {
+      setShowTitle(true)
+    } else {
+      setShowTitle(false)
+    }
+  }
+
+  const onMouseLeaveHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    selected && event && setShowTitle(false)
+  }
 
   let styles: Record<string, string>
+
+  const finalTitle = showTitle && selected ? 'Котэ не одобряет?' : title
 
   if (selected) {
     styles = generateClassNames(style, true, 'selected')
@@ -27,11 +41,16 @@ export const Card = (props: PropsType) => {
   }
 
   return (
-    <div className={styles.item} onClick={onSelectedHandler}>
+    <div
+      className={styles.item}
+      onClick={onSelectedHandler}
+      onMouseEnter={onMouseFocusHandler}
+      onMouseLeave={onMouseLeaveHandler}
+    >
       <div className={styles.wrapper}>
         <div className={styles.card}>
           <div className={styles.content}>
-            <p className={styles.title}>{title}</p>
+            <p className={styles.title}>{finalTitle}</p>
             <h3 className={styles.brand}>{brand}</h3>
             <h5 className={styles.filler}>{filler}</h5>
             <p className={styles.portion}>{portion}</p>
