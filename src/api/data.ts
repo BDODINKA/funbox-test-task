@@ -18,6 +18,7 @@ export type PackType = {
   description: string
   portion: number
   gift: number
+  count: number
 }
 
 const GoodsNyamushka = [
@@ -30,6 +31,7 @@ const GoodsNyamushka = [
     description: 'Печень утки разварная с артишоками.',
     portion: 10,
     gift: 1,
+    count: 10,
   },
   {
     id: v1(),
@@ -40,6 +42,7 @@ const GoodsNyamushka = [
     description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
     portion: 40,
     gift: 2,
+    count: 20,
   },
   {
     id: v1(),
@@ -50,6 +53,7 @@ const GoodsNyamushka = [
     description: 'Филе из цыплят с трюфелями в бульоне.',
     portion: 100,
     gift: 5,
+    count: 0,
   },
 ]
 const GoodsRoyalCanin = [
@@ -62,6 +66,7 @@ const GoodsRoyalCanin = [
     description: 'Вкуснейшая утка для вашего питомца',
     portion: 10,
     gift: 1,
+    count: 1,
   },
   {
     id: v1(),
@@ -72,6 +77,7 @@ const GoodsRoyalCanin = [
     description: 'Вкуснейшая утка для вашего питомца',
     portion: 10,
     gift: 1,
+    count: 2,
   },
   {
     id: v1(),
@@ -82,6 +88,7 @@ const GoodsRoyalCanin = [
     description: 'Диетическая индейка для вашего питомца',
     portion: 40,
     gift: 2,
+    count: 0,
   },
   {
     id: v1(),
@@ -92,6 +99,7 @@ const GoodsRoyalCanin = [
     description: 'Сытная кура для вашего питомца',
     portion: 100,
     gift: 5,
+    count: 3,
   },
 ]
 
@@ -105,6 +113,7 @@ const GoodsFrieskies = [
     description: 'Вкуснейшая утка для вашего питомца',
     portion: 10,
     gift: 1,
+    count: 3,
   },
   {
     id: v1(),
@@ -115,6 +124,7 @@ const GoodsFrieskies = [
     description: 'Нежнейшая рыбка для вашего питомца',
     portion: 40,
     gift: 2,
+    count: 3,
   },
   {
     id: v1(),
@@ -125,6 +135,7 @@ const GoodsFrieskies = [
     description: 'Паштет как в Домах Лондона для вашего питомца',
     portion: 100,
     gift: 5,
+    count: 0,
   },
 ]
 const GoodsBosh = [
@@ -137,6 +148,7 @@ const GoodsBosh = [
     description: 'Немецкое качество',
     portion: 10,
     gift: 1,
+    count: 3,
   },
   {
     id: v1(),
@@ -147,6 +159,7 @@ const GoodsBosh = [
     description: 'Немецкое качество',
     portion: 40,
     gift: 2,
+    count: 2,
   },
   {
     id: v1(),
@@ -157,6 +170,7 @@ const GoodsBosh = [
     description: 'Немецкое качество',
     portion: 100,
     gift: 5,
+    count: 1,
   },
 ]
 

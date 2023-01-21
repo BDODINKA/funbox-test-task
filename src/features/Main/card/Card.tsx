@@ -4,20 +4,26 @@ import { PackType } from '../../../api/data'
 import { generateClassNames } from '../../../utils/function/generateCSS'
 
 import style from './Card.module.scss'
+import { NoticeCard } from './NoticeCard'
 
 type PropsType = {
   card: PackType
 }
 
 export const Card = (props: PropsType) => {
-  const { title, brand, filler, portion, description, gift, weight } = props.card
+  const { title, brand, filler, portion, description, gift, weight, count } = props.card
 
   const [selected, setSelected] = useState<boolean>(false)
   const [showTitle, setShowTitle] = useState<boolean>(false)
 
+  const finalTitle = showTitle && selected ? 'Котэ не одобряет?' : title
+
   const onSelectedHandler = () => {
-    setSelected(!selected)
+    if (count > 0) {
+      setSelected(!selected)
+    }
   }
+
   const onMouseFocusHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     if (selected && event) {
       setShowTitle(true)
@@ -32,12 +38,10 @@ export const Card = (props: PropsType) => {
 
   let styles: Record<string, string>
 
-  const finalTitle = showTitle && selected ? 'Котэ не одобряет?' : title
-
   if (selected) {
-    styles = generateClassNames(style, true, 'selected')
+    styles = generateClassNames(style, selected, 'selected')
   } else {
-    styles = generateClassNames(style, false)
+    styles = generateClassNames(style, selected)
   }
 
   return (
@@ -62,17 +66,13 @@ export const Card = (props: PropsType) => {
           </div>
         </div>
       </div>
-      {!selected ? (
-        <p className={style.description}>
-          {'Чего сидишь? Порадуй котэ'}
-          <a href="src/features/Main/card/Card#" className={style.link}>
-            купи
-          </a>
-          {','}
-        </p>
-      ) : (
-        <p className={style.description}>{description}</p>
-      )}
+      <NoticeCard
+        styles={styles}
+        selected={selected}
+        count={count}
+        description={description}
+        filler={filler}
+      />
     </div>
   )
 }
