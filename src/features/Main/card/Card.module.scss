@@ -1,10 +1,11 @@
-@import './src/_variables';
-@import './src/_mixins';
+@import '../../../variables';
+@import '../../../mixins';
 
 .item {
   position: relative;
   max-height: 490px;
   margin-bottom: 40px;
+
   .wrapper {
     justify-content: center;
     align-items: center;
@@ -13,6 +14,10 @@
     border-radius: 10px;
     background: linear-gradient(135deg, transparent 32px, $border-primary 0);
     height: 490px;
+
+    &.wrapper_selected {
+      background: linear-gradient(135deg, transparent 32px, $border-secondary 0);
+    }
 
     .card {
       cursor: pointer;
@@ -66,6 +71,10 @@
           position: absolute;
           bottom: 3%;
           right: 3%;
+          &.circle_selected {
+            background: $border-secondary;
+          }
+
 
           .weight {
             padding-top: 14px;
@@ -81,22 +90,41 @@
     }
   }
 
+
   .description {
     margin-top: 10px;
-    color: #fff;
+    color: $text-color-third;
     font-size: 13px;
     font-weight: 400;
     line-height: 16px;
     text-align: center;
     text-shadow: 0 1px 0 #000;
     display: block;
-    .link{
+
+    .link {
       cursor: pointer;
       font-weight: 700;
       text-decoration: none;
       color: $link-color-primary;
       border-bottom: 1px dashed $link-color-primary;
       margin-left: 3px;
+    }
+  }
+
+  &:hover {
+    .wrapper {
+      background: linear-gradient(135deg, transparent 32px, $border-primary-hover 0);
+      &.wrapper_selected {
+        background: linear-gradient(135deg, transparent 32px, $border-secondary-hover 0);
+        .card {
+          .circle {
+            background: $border-primary-hover;
+            &.circle_selected{
+              background: $border-secondary-hover;
+            }
+          }
+        }
+      }
     }
   }
 }
