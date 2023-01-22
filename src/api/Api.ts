@@ -1,3 +1,5 @@
+import { appError, dataError } from '../common/constants/error'
+
 import { AnimalType, serverData } from './data'
 
 const isAppWorking = () => {
@@ -10,7 +12,7 @@ const isAppWorking = () => {
       }, 3000)
     } else {
       setTimeout(() => {
-        reject({ error: 'Sorry App is not working' })
+        reject({ error: appError })
       }, 3000)
     }
   })
@@ -24,7 +26,7 @@ const ResponseData = (serverData: AnimalType) => {
       }, 4000)
     } else {
       setTimeout(() => {
-        reject({ statusCode: 500, data: {}, error: 'Sorry but data is broken' })
+        reject({ statusCode: 500, data: {}, error: dataError })
       }, 4000)
     }
   })
@@ -37,5 +39,4 @@ export const Api = {
   getGoods() {
     return ResponseData(serverData)
   },
-  addGoods() {},
 }
