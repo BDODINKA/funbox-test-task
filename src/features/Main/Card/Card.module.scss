@@ -5,7 +5,8 @@
   position: relative;
   max-height: 490px;
   margin-bottom: 40px;
-  &.item_disabled{
+
+  &.item_disabled {
     pointer-events: none;
   }
 
@@ -37,23 +38,28 @@
       text-align: left;
       border-radius: 10px;
       color: $text-color-secondary;
+
       &.card_disabled {
         color: $text-color-disabled;
         background: url($card-url) bottom left no-repeat, linear-gradient(135deg, transparent 30px, $bg-secondary 0);
         opacity: 0.5;
       }
+
       .content {
         padding-left: 40px;
+
         .title {
           font-size: 16px;
           line-height: 19px;
           padding-top: 21px;
+          color: $text-color-secondary;
         }
 
         .brand {
           color: $text-color-primary;
           @include fonts-light(48px, 700, 56px);
           padding-top: 5px;
+
           &.brand_disabled {
             color: $text-color-disabled;
           }
@@ -62,6 +68,7 @@
         .filler {
           color: $text-color-primary;
           @include fonts-light(24px, 700, 28px);
+
           &.filler_disabled {
             color: $text-color-disabled;
           }
@@ -91,6 +98,7 @@
           &.circle_selected {
             background: $color-secondary;
           }
+
           &.circle_disabled {
             background: $color-disabled;
           }
@@ -143,6 +151,9 @@
         background: linear-gradient(135deg, transparent 32px, $color-secondary-hover 0);
 
         .card {
+          .title_selected_title{
+            color: $text-color-four;
+          }
           .circle {
             background: $color-primary-hover;
 
