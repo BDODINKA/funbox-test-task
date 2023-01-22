@@ -1,8 +1,14 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { Api } from '../api/Api'
+import { someError } from '../common/constants/error'
 
-export type LoadType = 'idle' | 'succeed' | 'failed' | 'loading'
+export enum LoadType {
+  'idle' = 0,
+  'succeed' = 1,
+  'failed' = 2,
+  'loading' = 3,
+}
 
 type Error = null | string
 
@@ -14,11 +20,14 @@ export type LoadStateType = {
 
 export const InitializeAppTC = createAsyncThunk<{}, undefined, { rejectValue: { error: Error } }>(
   'APP/INITIALIZE-APP',
-  async (arg, { rejectWithValue }) => {
+  async (_, { dispatch, rejectWithValue }) => {
+    dispatch(PreloaderAC({ status: 3 }))
     try {
       return await Api.getAppStatus()
     } catch (reason) {
       return rejectWithValue(reason as { error: Error })
+    } finally {
+      dispatch(PreloaderAC({ status: 0 }))
     }
   }
 )
@@ -26,18 +35,13 @@ export const InitializeAppTC = createAsyncThunk<{}, undefined, { rejectValue: { 
 const slice = createSlice({
   name: 'APP',
   initialState: {
-    loading: 'idle',
+    loading: 0,
     ErrorMessage: null,
     isInitialize: false,
   } as LoadStateType,
   reducers: {
     PreloaderAC: (state, action: PayloadAction<{ status: LoadType }>) => {
       state.loading = action.payload.status
-    },
-
-    ErrorAC: (state, action: PayloadAction<{ error: Error }>) => {
-      state.loading = 'failed'
-      state.ErrorMessage = action.payload.error
     },
   },
   extraReducers: builder => {
@@ -49,7 +53,7 @@ const slice = createSlice({
       if (action.payload) {
         state.ErrorMessage = action.payload.error
       } else {
-        state.ErrorMessage = 'Something Wrong'
+        state.ErrorMessage = someError
       }
     })
   },
@@ -57,4 +61,4 @@ const slice = createSlice({
 
 export const appReducer = slice.reducer
 
-export const { PreloaderAC, ErrorAC } = slice.actions
+export const { PreloaderAC } = slice.actions

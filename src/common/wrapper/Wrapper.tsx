@@ -7,9 +7,5 @@ type PropsType = {
 }
 
 export const Wrapper = (props: PropsType) => {
-  return (
-    <>
-      <div className={style.wrapper}>{props.children}</div>
-    </>
-  )
+  return <div className={style.wrapper}>{props.children}</div>
 }

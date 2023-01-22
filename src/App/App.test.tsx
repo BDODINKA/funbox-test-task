@@ -9,12 +9,13 @@ import { store } from './store'
 
 describe('App ', () => {
   it('render App', () => {
-    render(
+    const { container } = render(
       <Provider store={store}>
         <App />
       </Provider>
     )
-    expect(screen.getByText(/Render/i)).toBeInTheDocument()
+
+    expect(container.children[0]).toHaveClass('spinner')
   })
 })
 

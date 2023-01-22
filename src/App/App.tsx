@@ -1,11 +1,8 @@
 import React, { useEffect } from 'react'
 
-import './App.css'
 import { Loader } from '../common/loader/Loader'
 import { selectorErrorMessage, selectorIsInitialize } from '../common/selectors/selectorsAll'
 import { Crash } from '../features/Crash/Crash'
-import { Header } from '../features/Header/Header'
-import { MainComponent } from '../features/Main/MainComponent'
 import { useAppDispatch } from '../utils/hooks/useAppDispatch'
 import { useAppSelector } from '../utils/hooks/useAppSelector'
 
@@ -24,14 +21,14 @@ function App() {
 
   return (
     <>
-      {initializeApp && errorInitMessage ? (
-        <Crash errorMessage={errorInitMessage} />
-      ) : (
-        <>
-          <Header />
-          <MainComponent />
-        </>
-      )}
+      {/*{initializeApp && errorInitMessage ? (*/}
+      <Crash errorMessage={errorInitMessage} />
+      {/*) : (*/}
+      {/*  <>*/}
+      {/*    <Header />*/}
+      {/*    <MainComponent />*/}
+      {/*  </>*/}
+      {/*)}*/}
     </>
   )
 }
