@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
+import { someError } from '../../common/constants/error'
 import { Wrapper } from '../../common/wrapper/Wrapper'
 
 import style from './Crash.module.scss'
@@ -9,27 +10,13 @@ type PropsType = {
 }
 
 export const Crash = (props: PropsType) => {
-  const [showError, setShowError] = useState<boolean>(false)
-
-  const onFocusMouseHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-    event && setShowError(true)
-  }
-  const onLeaveMouseHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-    event && setShowError(false)
-  }
-
   return (
     <div className={style.main}>
       <Wrapper>
         <div className={style.content}>
-          <div className={style.item}></div>
-          <div className={style.item_cats}></div>
-          <div
-            className={style.error}
-            onMouseEnter={onFocusMouseHandler}
-            onMouseLeave={onLeaveMouseHandler}
-          >
-            {showError && 'ssssss'}
+          <div className={style.error}>{props.errorMessage ? props.errorMessage : someError}</div>
+          <div className={style.item}>
+            <div className={style.item_img} />
           </div>
         </div>
       </Wrapper>

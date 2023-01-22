@@ -1,48 +1,35 @@
 @import "src/variables";
+@import "src/_mixins";
 
 .main {
   background: url($bg-url-secondary);
-  //height: 100vh;
-
   .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
-
-    .item {
-      bottom: 290px;
-      fill: black;
-      width: 200px;
-      height: 200px;
-      background: url("/assets/svg/parachute.svg") no-repeat 0 35px;
-      position: absolute;
-    }
-    .item_cats {
-      bottom: 100px;
-      fill: red;
-      width: 200px;
-      height: 200px;
-      background: url("/assets/svg/cats.svg") no-repeat 35px;
-      position: absolute;
-    }
-
     .error {
-      color: #B3B3B3;
-      width: 400px;
-      height: 400px;
       text-align: center;
+      padding-top: 10%;
+      font-size: 24px;
+      @include fonts-strong(36px,normal,100, 44px, $font);
+      color: $text-color-third;
+      text-shadow: 0 1px 1px $text-color-primary;
     }
+    .item {
+      position:relative;
+      bottom: 0;
+      right: 5%;
+      .item_img {
+
+        height: 280px;
+        width:300px;
+        background: url($cats-url) no-repeat;
+        background-size: cover;
+        margin-left: auto;
+      }
+    }
+
   }
 
-}
-
-@keyframes title {
-  from {
-    font-size: 12px;
-  }
-  to {
-    font-size: 40px;
-  }
 }
