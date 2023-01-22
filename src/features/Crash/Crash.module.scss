@@ -1,0 +1,48 @@
+@import "src/variables";
+
+.main {
+  background: url($bg-url-secondary);
+  //height: 100vh;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+
+    .item {
+      bottom: 290px;
+      fill: black;
+      width: 200px;
+      height: 200px;
+      background: url("/assets/svg/parachute.svg") no-repeat 0 35px;
+      position: absolute;
+    }
+    .item_cats {
+      bottom: 100px;
+      fill: red;
+      width: 200px;
+      height: 200px;
+      background: url("/assets/svg/cats.svg") no-repeat 35px;
+      position: absolute;
+    }
+
+    .error {
+      color: #B3B3B3;
+      width: 400px;
+      height: 400px;
+      text-align: center;
+    }
+  }
+
+}
+
+@keyframes title {
+  from {
+    font-size: 12px;
+  }
+  to {
+    font-size: 40px;
+  }
+}
