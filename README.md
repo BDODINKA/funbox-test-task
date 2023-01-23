@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Level I 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Q1 Расскажите, чем, на ваш взгляд, отличается хорошая верстка от плохой с точки зрения
+* пользователя;
+* менеджера проекта;
+* дизайнера;
+* верстальщика;
+* клиентского программиста;
+* серверного программиста.
 
-## Available Scripts
+***Пользователь***: Я считаю, что хорошая верстка от плохой с точки зрения пользователя отличается дружелюбным и удобным интерфейсом на странице.
 
-In the project directory, you can run:
 
-### `yarn start`
+***Менеджер проекта***: Для таких людей важны всякие мелочи и детали. Например, если шрифт на 1 px больше.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+***Дизайнер***: Для дизайнера хорошая верстка это Pixel Perfect.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+***Верстальщик***: Плохая верстка от верстальщика это когда нет хорошего макета с внятным тз, а также не использование пре-процессоров.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***Клиентский программист***: Хорошая верстка это минимум событий изменений элементов, для программиста важнее правильно работающая логика.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***Серверный программист***: Для таких людей верстка не имеет значения. Для серверного программиста корректные данные первоочередная забота.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Q2 Опишите основные особенности верстки крупных многостраничных сайтов, дизайн которых может меняться в процессе реализации и поддержки.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Расскажите о своем опыте верстки подобных сайтов: какие методологии, инструменты и технологии вы применяли на практике.
 
-## Learn More
+Когда речь заходит об верстке больших проектов, то ум приходят слова: sass, Material UI. Если речь идет об очень больших проектах, то разумно будет сделать Style Guide, использовать StoryBook, где можно расписать все элементы и их использование. А также придерживаться принципа DRY.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Q3 Опишите основные особенности верстки сайтов, которые должны одинаково хорошо отображаться как на любом современном компьютере, так и на смартфонах и планшетах под управлением iOS и Android. Расскажите о своем опыте верстки подобных сайтов: какие инструменты и технологии вы применяли, как проверяли результат на различных устройствах, какие именно устройства требовалось поддерживать. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+При любой верстке, я всегда имею в виду мобильные дисплеи вплоть до 320px и стараюсь использовать flex-box. Даже если это Таблица с данными и, ее придется реализовать на мобильных устройствах.
+
+#### Q4 Расскажите, какие инструменты помогают вам экономить время в процессе написания, проверки и отладки кода.
+Я использую EsLint,Prettier,typescript,sass,Material UI
+
+#### Q5 Вам нужно понять, почему страница отображается некорректно в Safari на iOS и в IE на Windows. Код писали не вы, доступа к исходникам у вас нет. Ваши действия? Сталкивались ли вы с подобными проблемами на практике?
+
+Я раньше мало сталкивался с такими проблемами, зачастую проблема в css. В таком случае я смотрю что не так отображается, нахожу в dev-tools искомое, a затем захожу на caniuse.com и смотрю что поддерживается, а что нет и как это можно исправить.
+
+#### Q6 Дизайнер отдал вам макет, в котором не показано, как должны выглядеть интерактивные элементы при наведении мыши. Ваши действия?
+
+Уточню у дизайнера этот момент. И на основании этого либо получу в ответ исправленный макет либо сделаю просто подсветку элементов в соответствии с цветовой гаммой сайта.
+
+#### Q7 Какие ресурсы вы используете для развития в профессиональной сфере? Приведите несколько конкретных примеров (сайты, блоги и так далее).
+Последнее время предпочитаю читать книги. За последний месяц прочитал книгу из серии You don't know JS 'Типы и грамматические конструкции', в ближайшее время планирую начать Head First 'Паттерны проектирования'. Ну и конечно же официальная документация
+* stackoverflow
+* codepen
+* Youtube канал Михаил Непомнящий, Aй-ти Синяк, Ulbi TV, Web dev
+* learn JavaScript
+* MDN
+
+#### Какое направление развития вам более близко: JS-программирование, HTML/CSS верстка или и то, и другое?
+
+Направление к которому я стремлюсь это front-end full stack developer c перспективой роста.
+
+#### Какие ещё области знаний, кроме тех, что непосредственно относятся к работе, вам интересны?
+
+
+
+
+#### Q8 Расскажите нам о себе и предоставьте несколько ссылок на последние работы, выполненные вами.
+Меня зовут Дмитрий, я родом из Минска, имею Высшее профильное образование в ИТ сфере.
+В свободное от профессиональной деятельности время улучшаю свой английский который на данный момент (А2).
+Отношусь к любым проектам как к своему детищу, в меру дотошный, не стесняюсь просить о помощи если нужна, в целом командный игрок.
+Увлекаюсь игрой на Гитаре, немного на фортепиано. Нравится проходить Квесты, а также люблю заниматься ремонтом электронной-техники.
+
+
+
+Вот несколько примеров моих работ.
+
+https://bdodinka.github.io/cards/ - командный проект
+мной реализовано:
+* страница восстановления пароля
+* cтраница профайла
+* обучающих карточек
+* адаптивная таблица
+* компонент фильтрации
+* самописная пагинация 
+* универсальные компоненты
+* логика модальных окон
+* кастомные утилитные функции
+
+https://bdodinka.github.io/todolist-ts/ - pet project
+
+
+
