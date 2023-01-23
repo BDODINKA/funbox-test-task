@@ -46,7 +46,7 @@ export const Card = (props: PropsType) => {
     styles = generateClassNames(style, selected)
   }
   if (showTitle) {
-    styles = generateClassNames(styles, selected, 'selected_title')
+    styles = generateClassNames(styles, selected, 'selected_hover')
   }
   if (count < 1) {
     styles = generateClassNames(style, true, 'disabled')

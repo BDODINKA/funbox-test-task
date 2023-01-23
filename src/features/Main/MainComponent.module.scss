@@ -23,11 +23,18 @@
   }
 
 }
+
 @keyframes content {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main {
+    background: url($bg-url-secondary);
   }
 }
